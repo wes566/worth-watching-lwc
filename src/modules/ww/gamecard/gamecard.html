@@ -1,0 +1,49 @@
+<template>
+    <ww-card>
+        <div if:false={showError} class="content">
+            <section class="teams">
+                <div class="team">
+                    <img class="team-logo" src={homeImage} />
+                    <div>{homeName}</div>
+                </div>
+                <div>
+                    <div if:false={showScore}>@</div>
+                    <div if:true={showScore} class="score">
+                        <div class="home-score">{homeScore}</div>
+                        <div class="spacer">-</div>
+                        <div class="home-score">{awayScore}</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <img class="team-logo" src={awayImage} />
+                    <div>{awayName}</div>
+                </div>
+            </section>
+            <section class="status">
+                <div>{status}</div>
+            </section>
+            <section class="footer">
+                <div>
+                    <ww-grade grade={gameGrade}></ww-grade>
+                </div>
+                <div class="action-buttons">
+                    <button
+                        if:true={hasHighlights}
+                        onclick={handleHighlightClick}
+                    >
+                        <div class="video-player-icon icon"></div>
+                        <label>Highlights</label>
+                    </button>
+                    <button if:true={hasScore} onclick={handleShowScoreClick}>
+                        <div class="scoreboard-icon icon"></div>
+                        <label>{scoreLabel}</label>
+                    </button>
+                </div>
+            </section>
+        </div>
+        <!-- TOOO - make error look better -->
+        <div if:true={showError} class="error">
+            Oops, this game isn't loading properly
+        </div>
+    </ww-card>
+</template>

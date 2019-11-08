@@ -1,0 +1,137 @@
+ww-card {
+    min-height: 150px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    padding: 12px 12px;
+}
+
+.status {
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--theme-color);
+    border-radius: 0.6em;
+    color: var(--theme-color);
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-weight: 400;
+    line-height: 1;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 16px 21px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.team-logo {
+    height: 40px;
+}
+
+.team > div {
+    margin-top: 12px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+
+    font-weight: 700;
+}
+
+.spacer {
+    margin: 0 9px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+
+    color: var(--theme-color);
+}
+
+label {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.action-buttons > button {
+    width: 114px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 9px 16px;
+}
+
+button {
+    border: 0;
+}
+
+button:hover {
+    outline: 1px solid var(--theme-color);
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    background-color: var(--theme-color);
+
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    margin-bottom: 9px;
+}
+
+.scoreboard-icon {
+    -webkit-mask-image: url(./icons/scoreboard.svg);
+    mask-image: url(./icons/scoreboard.svg);
+}
+
+.video-player-icon {
+    -webkit-mask-image: url(./icons/video-player.svg);
+    mask-image: url(./icons/video-player.svg);
+}

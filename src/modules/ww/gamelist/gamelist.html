@@ -1,0 +1,7 @@
+<template>
+    <div if:true={hasGames} class="games-container">
+        <template for:each={games} for:item="game">
+            <ww-gamecard game={game} key={game.id}></ww-gamecard>
+        </template>
+    </div>
+</template>

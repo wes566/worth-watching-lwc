@@ -1,0 +1,26 @@
+# Global settings applied to the whole site.
+#
+# “base” is the directory to change to before starting build. If you set base:
+#        that is where we will look for package.json/.nvmrc/etc, not repo root!
+# “command” is your build command.
+# “publish” is the directory to publish (relative to the root of your repo).
+
+[build]
+  base    = "."
+  command = "npm install && npm run build:prod"
+  publish = "dist"
+
+[context.production]
+
+[context.production.environment]
+  # FOO="FOO_PROD"
+
+[context.branch-deploy]
+
+[context.branch-deploy.environment] # any non-prod or non-pr builds uses this
+  # FOO="FOO_STAGING"
+
+[context.deploy-preview]
+
+[context.deploy-preview.environment] # any pr builds use this
+  # FOO="FOO_PR"

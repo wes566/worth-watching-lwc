@@ -1,0 +1,16 @@
+<template>
+    <!-- TODO - make loading cool looking -->
+    <div if:false={isGameDataLoaded}>
+        Loading...
+    </div>
+    <div if:true={hasError}>
+        Oops, there was an error getting today's games, try again later.
+    </div>
+    <div if:true={isGameDataLoaded} class="header">
+        <img src="./team-logos/nfl/nfl.svg" />
+        <h1>{header}</h1>
+    </div>
+    <div if:true={hasGames} class="list-div">
+        <ww-gamelist games={games}></ww-gamelist>
+    </div>
+</template>

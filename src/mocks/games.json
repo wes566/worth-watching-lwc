@@ -1,0 +1,42 @@
+{
+  "games": [
+    {
+      "id": "123",
+      "startTime": "1564466616",
+      "endTime": "1564466707",
+      "homeTeam": {
+        "id": "seahawks",
+        "cityName": "Seattle",
+        "name": "Seahawks"
+      },
+      "awayTeam": {
+        "id": "bears",
+        "cityName": "Chicago",
+        "name": "Bears"
+      },
+      "homeScore": 35,
+      "awayScore": 17,
+      "isGameOver": true,
+      "hasGameStarted": true
+    },
+    {
+      "id": "456",
+      "startTime": "1564466616",
+      "endTime": "1564466707",
+      "homeTeam": {
+        "id": "broncos",
+        "cityName": "Denver",
+        "name": "Broncos"
+      },
+      "awayTeam": {
+        "id": "vikings",
+        "cityName": "Minnesota",
+        "name": "Vikings"
+      },
+      "homeScore": 35,
+      "awayScore": 34,
+      "isGameOver": true,
+      "hasGameStarted": true
+    }
+  ]
+}

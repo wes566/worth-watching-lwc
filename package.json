@@ -1,0 +1,72 @@
+{
+  "name": "worth-watching-lwc",
+  "version": "0.0.1",
+  "description": "Ssample PWA written using LWC",
+  "main": "src/index.ts",
+  "author": "Wes Peter",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && rollup -c rollup.config.js --environment build:development",
+    "build:prod": "npm run clean && rollup -c rollup.config.js --environment build:production",
+    "start": "npm run clean && cross-env NODE_ENV=debug npm run rollup:watch",
+    "rollup:watch": "cross-env rollup -c ./rollup.config.js --watch",
+    "pretty": "prettier -l \"**/*.{js,ts,json,md,html,css}\"",
+    "pretty:file": "prettier -l",
+    "pretty:fix": "prettier --write \"**/*.{js,ts,json,md,html,css}\"",
+    "eslint": "eslint '**/*.{ts,js}'",
+    "eslint:file": "eslint",
+    "eslint:fix": "eslint --fix '**/*.{ts,js}'",
+    "lint": "npm run pretty && npm run eslint",
+    "lint:fix": "npm run pretty:fix && npm run eslint:fix",
+    "lint:staged": "lint-staged",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-typescript": "^7.6.3",
+    "@lwc/rollup-plugin": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "cross-env": "^5.2.1",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "fs-extra": "^8.1.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "rollup": "^1.23.1",
+    "rollup-plugin-node-resolve": "^4.2.4",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-workbox-build": "^0.2.0",
+    "typescript": "^3.6.4",
+    "workbox-build": "^4.3.1",
+    "workbox-sw": "^4.3.1",
+    "workbox-window": "^4.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:staged || { echo \"\n\n****\nYou can run 'npm run lint:fix' from the repo root to attempt to fix lint errors.\n****\n\n\"; false; }"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md,html,css}": "npm run pretty:file -- ",
+    "*.{js,ts}": "npm run eslint:file -- "
+  },
+  "dependencies": {
+    "lwc": "^1.1.1",
+    "side-drawer": "^2.3.0",
+    "wc-menu-button": "^3.0.1"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "lwc"
+        }
+      }
+    ]
+  }
+}

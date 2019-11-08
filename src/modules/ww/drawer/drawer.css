@@ -1,0 +1,39 @@
+:host {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    padding: 0 37px;
+}
+
+.top {
+    padding-top: 37px;
+}
+
+.bottom {
+    padding-bottom: var(--navbar-height);
+}
+
+ww-card {
+    padding: 50px 37px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:hover a {
+    background-color: blue;
+}

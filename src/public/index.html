@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" href="./logo.png" />
+        <link rel="manifest" href="./manifest.json" />
+        <link rel="apple-touch-icon" sizes="192x192" href="./logo.png" />
+        <title>WorthWatching.app</title>
+
+        <link rel="stylesheet" type="text/css" href="./shared.css" />
+
+        <!-- service worker registration -->
+        <script type="module">
+            if ("serviceWorker" in navigator) {
+                import("./workbox.js").then(module => {
+                    const wb = new module.Workbox("./sw.js");
+
+                    wb.addEventListener("waiting", event => {
+                        console.log(
+                            `A new service worker has installed, but it can't activate` +
+                                `until all tabs running the current version have fully unloaded.`
+                        );
+                    });
+
+                    wb.addEventListener("message", event => {
+                        if (event.data.type === "CACHE_UPDATED") {
+                            const { updatedURL } = event.data.payload;
+
+                            console.log(
+                                `A newer version of ${updatedURL} is available!`
+                            );
+                        }
+                    });
+
+                    wb.register();
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <script type="module" src="./bundle.js"></script>
+    </body>
+</html>
