@@ -14,9 +14,3 @@ npm start
 ```
 
 Then use any static file server to serve up the `dist/` directory. I recommend [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
-
-## To build for prod (minified and no source maps)
-
-```sh
-npm run build-prod
-```
